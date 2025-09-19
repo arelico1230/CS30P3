@@ -3,6 +3,7 @@ package Mastery;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class BreakAPlate {
 
@@ -38,6 +39,11 @@ public class BreakAPlate {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 434, 250);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
 	}
-
 }
