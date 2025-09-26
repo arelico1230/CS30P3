@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class LocalBankGUI {
+	Bank lbank = new Bank();
 
 	private JFrame frame;
 	private JTextField anum;
@@ -91,7 +92,7 @@ public class LocalBankGUI {
 		beginbal.setBounds(33, 332, 398, 27);
 		panel.add(beginbal);
 		
-		JLabel accountnumber = new JLabel("Account number:");
+		JLabel accountnumber = new JLabel("Account ID:");
 		accountnumber.setForeground(new Color(0, 0, 0));
 		accountnumber.setBounds(33, 137, 212, 14);
 		panel.add(accountnumber);
@@ -163,6 +164,11 @@ public class LocalBankGUI {
 					lastname.setForeground(Color.black);
 					beginningbalance.setForeground(Color.black);
 				}
+				anum.setText(null);
+				adepowith.setText(null);
+				fn.setText(null);
+				ln.setText(null);
+				beginbal.setText(null);
 			}
 		});
 		action.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -170,11 +176,36 @@ public class LocalBankGUI {
 		action.setBounds(33, 56, 398, 36);
 		panel.add(action);
 		
-		JButton finalbutton = new JButton("Create account");
+		JButton finalbutton = new JButton("Process");
 		finalbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
-		});
+				
+				if (action.getSelectedItem().equals("Add account")) {
+					String dis = lbank.addAccount(fn.getText(), ln.getText(), Double.parseDouble(beginbal.getText()));
+					accountdis.setText(dis);
+				}
+				if (action.getSelectedItem().equals("Remove account")) {
+					String dis = lbank.deleteAccount(anum.getText());
+					accountdis.setText(dis);
+				}
+				if (action.getSelectedItem().equals("Check balance")) {
+					String dis = lbank.checkBalance(anum.getText());
+					accountdis.setText(dis);
+				}
+				
+				
+				if (action.getSelectedItem().equals("Deposit")) {
+					String dis = lbank.transaction(1, anum.getText(), Double.parseDouble(adepowith.getText()));
+					accountdis.setText(dis);
+				}
+				
+				if (action.getSelectedItem().equals("Withdrawal")) {
+					String dis = lbank.transaction(2, anum.getText(), Double.parseDouble(adepowith.getText()));
+					accountdis.setText(dis);
+					}
+				
+				
+		}});
 		finalbutton.setBounds(33, 531, 398, 44);
 		panel.add(finalbutton);
 	}

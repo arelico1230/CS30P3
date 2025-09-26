@@ -39,7 +39,7 @@ public class Account {
 	 * post: The account ID has been returned.
 	 */
 	public String getID() {
-	 	return(acctID);
+	 	return("Your account ID is " + acctID);
 	}
 
 
@@ -105,7 +105,7 @@ public class Account {
 
 		accountString = acctID + " ";	//changed for Chapter 11 Exer 1
 		accountString += cust.toString();
-		accountString += "Current balance is " + money.format(balance);
+		accountString += "has a current balance of " + money.format(balance);
 	 	return(accountString);
 	}
 }
