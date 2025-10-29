@@ -95,7 +95,7 @@ public class TicTacToe {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 459, 357);
+		frame.setBounds(100, 100, 459, 356);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
