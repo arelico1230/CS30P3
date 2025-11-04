@@ -79,7 +79,7 @@ public class MyfilePart2 {
 						}
 						else
 						{
-							dis.setText("The file could not be ");
+							dis.setText("The file could not be created");
 						}
 					}
 					catch(IOException ex)
