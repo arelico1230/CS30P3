@@ -1,2 +1,10 @@
 rc
 1
+richy
+10
+youdis
+5
+rich
+90
+youdis
+80
