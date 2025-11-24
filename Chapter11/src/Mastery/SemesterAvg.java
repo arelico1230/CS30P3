@@ -161,6 +161,7 @@ public class SemesterAvg {
 		panel.add(avg);
 		
 		JTextArea dis = new JTextArea();
+		dis.setEditable(false);
 		dis.setBounds(0, 289, 538, 240);
 		panel.add(dis);
 		
@@ -192,16 +193,13 @@ public class SemesterAvg {
 				try
 				{
 					/* find average */
-					double avgGrade = ((Double.parseDouble(grade1)) 
-							+ (Double.parseDouble(grade2)) 
-							+ (Double.parseDouble(grade3)) 
-							+ (Double.parseDouble(grade4))) / 4;
-
+					double avgGrade = ((Double.parseDouble(grade1)) + (Double.parseDouble(grade2)) + 
+							(Double.parseDouble(grade3)) + (Double.parseDouble(grade4))) / 4;
 					
 					avg.setText(decimalFormatter.format(avgGrade) + "%");
 
 					/* Prepare file writing */
-					StringBuilder studentData = new StringBuilder();
+					StringBuilder output = new StringBuilder();
 					FileWriter out = new FileWriter(dataFile, true);
 					BufferedWriter writeFile = new BufferedWriter(out);
 
@@ -210,18 +208,18 @@ public class SemesterAvg {
 					double grd3 = Double.parseDouble(grade3);
 					double grd4 = Double.parseDouble(grade4);
 
-					studentData.append("Name: ").append(studentname);
-					studentData.append(" Grade Level: ");
-					studentData.append(gradelevel).append(" Semester: ");
-					studentData.append(semesternum);
-					studentData.append(" Grades: ");
-					studentData.append(decimalFormatter.format(grd1)).append("%, ");
-					studentData.append(decimalFormatter.format(grd2)).append("%, ");
-					studentData.append(decimalFormatter.format(grd3)).append("%, ");
-					studentData.append(decimalFormatter.format(grd4)).append("%, ");
-					studentData.append(" Average: ").append(decimalFormatter.format(avgGrade)).append("%");
+					output.append("Name: ").append(studentname);
+					output.append(" Grade Level: ");
+					output.append(gradelevel).append(" Semester: ");
+					output.append(semesternum);
+					output.append(" Grades: ");
+					output.append(decimalFormatter.format(grd1)).append("%, ");
+					output.append(decimalFormatter.format(grd2)).append("%, ");
+					output.append(decimalFormatter.format(grd3)).append("%, ");
+					output.append(decimalFormatter.format(grd4)).append("%, ");
+					output.append(" Average: ").append(decimalFormatter.format(avgGrade)).append("%");
 
-					writeFile.write(studentData.toString());
+					writeFile.write(output.toString());
 					writeFile.newLine();
 
 					writeFile.close();
@@ -230,7 +228,7 @@ public class SemesterAvg {
 					JOptionPane.showMessageDialog(null, "Data saved to file " + FILE_NAME,
 							"Message", JOptionPane.INFORMATION_MESSAGE);
 
-					dis.setText("Press 'Display File Contents' to read data of file " + FILE_NAME);
+					dis.setText("Press 'Display File Content' to read data of file " + FILE_NAME);
 
 				}
 				catch (IOException err)
@@ -294,21 +292,25 @@ public class SemesterAvg {
 		showbtn.setBounds(193, 540, 152, 23);
 		panel.add(showbtn);
 		
-		JButton btnClearFile = new JButton("Clear File");
-		btnClearFile.addActionListener(new ActionListener() {
+		JButton clearbtn = new JButton("Clear File");
+		clearbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
 				try {
 					FileOutputStream fos = new FileOutputStream(dataFile);
+					JOptionPane.showMessageDialog(null, "Data cleared from file " + FILE_NAME,
+							"Message", JOptionPane.INFORMATION_MESSAGE);
+
+					dis.setText("Data has been cleared from file " + FILE_NAME);
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
 		});
-		btnClearFile.setForeground(Color.WHITE);
-		btnClearFile.setBackground(new Color(0, 128, 192));
-		btnClearFile.setBounds(397, 540, 131, 23);
-		panel.add(btnClearFile);
+		clearbtn.setForeground(Color.WHITE);
+		clearbtn.setBackground(new Color(0, 128, 192));
+		clearbtn.setBounds(397, 540, 131, 23);
+		panel.add(clearbtn);
 	}
 }
