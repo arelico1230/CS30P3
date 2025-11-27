@@ -8,3 +8,7 @@ rich
 90
 youdis
 80
+youdis doudis
+100
+rich
+50

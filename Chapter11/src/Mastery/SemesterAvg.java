@@ -1,3 +1,9 @@
+/*
+Name: Richard Chang
+Credit Name: CSE2130 - File Structures & Exception Handling
+Assignment name: StudentSemesterAverage GUI
+*/
+
 package Mastery;
 
 import java.awt.EventQueue;
@@ -169,20 +175,17 @@ public class SemesterAvg {
 		savebtn.setForeground(new Color(255, 255, 255));
 		savebtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
-			{/* Read input values */
-				
+			{
+				//take inputs
 				String studentname = stuname.getText().trim();
 				String gradelevel = grdlvl.getText().trim();
 				String semesternum = semnum.getText().trim();
-				
-				
-
 				String grade1 = grd1.getText().trim();
 				String grade2 = grd2.getText().trim();
 				String grade3 = grd3.getText().trim();
 				String grade4 = grd4.getText().trim();
 
-				/* check if user left any fields empty */
+				//check if user left any fields empty
 				if (studentname.isEmpty() ||gradelevel.isEmpty() || semesternum.isEmpty() || grade1.isEmpty() || grade2.isEmpty() 
 					|| grade3.isEmpty()|| grade4.isEmpty())
 				{
@@ -192,22 +195,24 @@ public class SemesterAvg {
 
 				try
 				{
-					/* find average */
+					//find average
 					double avgGrade = ((Double.parseDouble(grade1)) + (Double.parseDouble(grade2)) + 
 							(Double.parseDouble(grade3)) + (Double.parseDouble(grade4))) / 4;
 					
 					avg.setText(decimalFormatter.format(avgGrade) + "%");
 
-					/* Prepare file writing */
+					//file writing tools
 					StringBuilder output = new StringBuilder();
 					FileWriter out = new FileWriter(dataFile, true);
 					BufferedWriter writeFile = new BufferedWriter(out);
-
+					
+					//turn the grade inputs from string to doubles
 					double grd1 = Double.parseDouble(grade1);
 					double grd2 = Double.parseDouble(grade2);
 					double grd3 = Double.parseDouble(grade3);
 					double grd4 = Double.parseDouble(grade4);
-
+					
+					//write the information
 					output.append("Name: ").append(studentname);
 					output.append(" Grade Level: ");
 					output.append(gradelevel).append(" Semester: ");
@@ -224,15 +229,18 @@ public class SemesterAvg {
 
 					writeFile.close();
 					out.close();
-
+					
+					//confirmation pop up
 					JOptionPane.showMessageDialog(null, "Data saved to file " + FILE_NAME,
 							"Message", JOptionPane.INFORMATION_MESSAGE);
-
+					
+					//prompt user to press button
 					dis.setText("Press 'Display File Content' to read data of file " + FILE_NAME);
 
-				}
+				}//error messagesVVV
 				catch (IOException err)
 				{
+					
 					JOptionPane.showMessageDialog(null, "File could not be created\n" + err.getMessage(),
 							"File Error", JOptionPane.ERROR_MESSAGE);
 				}
@@ -256,16 +264,18 @@ public class SemesterAvg {
 		showbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
+			//reset display text
 			dis.setText(null);
 			
 			try 
 			{
+				//file reader tools
 				FileReader in = new FileReader(dataFile);
 				BufferedReader readFile = new BufferedReader(in);
-
 				String line;
 				StringBuilder output = new StringBuilder();
 				
+				//reads file and makes a new line whenever there is text
 				while ((line = readFile.readLine()) != null)
 				{
 					output.append(line).append("\n");
@@ -276,6 +286,7 @@ public class SemesterAvg {
 				dis.setText(output.toString());
 			}
 			
+			//error messages VV
 			catch (FileNotFoundException err)
 			{
 				JOptionPane.showMessageDialog(null, "File could not be found!\n" + err.getMessage(),
@@ -296,6 +307,7 @@ public class SemesterAvg {
 		clearbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
+				//clears the file
 				try {
 					FileOutputStream fos = new FileOutputStream(dataFile);
 					JOptionPane.showMessageDialog(null, "Data cleared from file " + FILE_NAME,

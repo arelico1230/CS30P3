@@ -17,4 +17,9 @@ public class manager extends employee
 		
 		return payEarned;
 	}
+	
+	public String toString()
+	{
+		return(super.toString() + ", Manager, " + "Salary: "+  yearlySalary);
+	}
 }

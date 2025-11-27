@@ -10,7 +10,7 @@ import javax.swing.*;
 
 
 public class StatsP2GUI extends JFrame {
-    private JPanel mainPanel;
+    JPanel mainPanel;
     private JTextArea resultArea;
     private JButton createFileButton;
     private JButton analyzeButton;
@@ -151,9 +151,7 @@ public class StatsP2GUI extends JFrame {
                 inputDialog.add(new JLabel("Test Score:"));
                 inputDialog.add(scoreField);
                 
-                int result = JOptionPane.showConfirmDialog(this, inputDialog, 
-                    "Enter data for Student " + (i + 1), 
-                    JOptionPane.OK_CANCEL_OPTION);
+                int result = JOptionPane.showConfirmDialog(this, inputDialog, "Enter data for Student " + (i + 1), JOptionPane.OK_CANCEL_OPTION);
                 
                 if (result != JOptionPane.OK_OPTION) {
                     break; // User cancelled

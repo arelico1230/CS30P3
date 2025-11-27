@@ -20,8 +20,8 @@ public class Rosters {
 	
 	//Obtain file name and number of students
 	
-	System.out.print("Enter the file directory: ");
-	fileName = input.nextLine();
+	System.out.print("Enter the file name: ");
+	fileName = "C:\\Users\\38343009\\git\\CS30P3\\Chapter11\\src\\SkillBuilders\\" +input.nextLine();
 	stuNameFile = new File(fileName);
 	
 	System.out.print("How many students: ");
