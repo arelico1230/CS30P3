@@ -237,7 +237,7 @@ public class SemesterAvg {
 					//prompt user to press button
 					dis.setText("Press 'Display File Content' to read data of file " + FILE_NAME);
 
-				}//error messagesVVV
+				}//error messages if something goes wrongVVV
 				catch (IOException err)
 				{
 					
@@ -286,7 +286,7 @@ public class SemesterAvg {
 				dis.setText(output.toString());
 			}
 			
-			//error messages VV
+			//error messages if something goes wrong VV
 			catch (FileNotFoundException err)
 			{
 				JOptionPane.showMessageDialog(null, "File could not be found!\n" + err.getMessage(),
@@ -310,9 +310,7 @@ public class SemesterAvg {
 				//clears the file
 				try {
 					FileOutputStream fos = new FileOutputStream(dataFile);
-					JOptionPane.showMessageDialog(null, "Data cleared from file " + FILE_NAME,
-							"Message", JOptionPane.INFORMATION_MESSAGE);
-
+					JOptionPane.showMessageDialog(null, "Data cleared from file " + FILE_NAME, "Message", JOptionPane.INFORMATION_MESSAGE);
 					dis.setText("Data has been cleared from file " + FILE_NAME);
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
