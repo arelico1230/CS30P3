@@ -1,6 +1,5 @@
-/**
- * Disk class.
- */
+package Puck;
+
 public class Disk extends Circle {
 	private double thickness;
 		
