@@ -1,5 +1,8 @@
 package Puck;
 
+/**
+ * Circle class.
+ */
 public class Circle {
 	private static double PI = 3.14;
 	private double radius;
@@ -75,10 +78,12 @@ public class Circle {
 	 * post: true has been returned if the objects have 
 	 * the same radii. false has been returned otherwise.
 	 */
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj) 
+	{
 		Circle testObj = (Circle)obj;
 		
-	 	if (testObj.getRadius() == radius) {
+	 	if (testObj.getRadius() == radius)
+	 	{
 			return(true);
 		} else {
 			return(false);
