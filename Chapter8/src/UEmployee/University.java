@@ -7,11 +7,11 @@ public class University {
 		Faculty f = new Faculty("Arelico", 70000, "Computer Science");
 		Staff s = new Staff("Richard", 100000, "Principal");
 
-		System.out.println("Faculty" + "\nName: " + f.getName() + "\nSalary: $" + f.getSalary() + "\nDepartment: " + f.getdepartment());
+		System.out.println("Faculty" + "\nName: " + f.getname() + "\nSalary: $" + f.getsalary() + "\nDepartment: " + f.getdepartment());
 		
 		System.out.println();
 
-		System.out.println("Staff" + "\nName: " + s.getName() + "\nSalary: $" + s.getSalary() + "\nJob Title: " + s.gettitle());
+		System.out.println("Staff" + "\nName: " + s.getname() + "\nSalary: $" + s.getsalary() + "\nJob Title: " + s.gettitle());
 	}
 }
 

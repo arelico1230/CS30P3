@@ -13,14 +13,14 @@ public class UEmployee {
 	}
 
 	
-	public String getName()
+	public String getname()
 	{
 		return(employeename);
 	}
 
 
 	
-	public double getSalary()
+	public double getsalary()
 	{
 		return(salary);
 	}
