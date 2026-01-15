@@ -1,3 +1,8 @@
+/*
+Name: Richard Chang
+Credit Name: CSE3020 - Computer Science 4
+Assignment name: LinkedListMastery
+*/
 package Mastery;
 
 import linkedlist.LinkedList;
@@ -43,4 +48,35 @@ public class LinkedListMastery {
 	}
 
 }
+
+/*
+ Test case:
+ 
+Soda amount: 3 cans
+Coke
+Crush
+Pepsi
+
+Drank Coke
+Soda amount: 2 cans
+Crush
+Pepsi
+
+Added Sprite to the front and Chubby Cola to the end
+Soda amount: 4 cans
+Sprite
+Crush
+Pepsi
+Chubby Cola
+
+Drank Crush
+Soda amount: 3 cans
+Sprite
+Pepsi
+Chubby Cola
+
+Drank all sodas
+Soda amount: 0 cans
+
+ */
 

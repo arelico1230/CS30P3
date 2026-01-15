@@ -1,3 +1,8 @@
+/*
+Name: Richard Chang
+Credit Name: CSE3020 - Computer Science 4
+Assignment name: StackMastery
+*/
 package Mastery;
 
 import stack.Stack2;
@@ -27,3 +32,14 @@ public class StackMastery {
 	}
 
 }
+
+/*
+ * Test case:
+
+ Stacking Coke, Crush, and Pepsi
+Top of the soda stack: Pepsi
+Amount of cans: 3
+Take a soda off the top: Pepsi
+Top of the soda stack: Crush
+Amount of cans: 2
+*/

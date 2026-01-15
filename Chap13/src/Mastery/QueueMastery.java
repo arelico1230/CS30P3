@@ -1,3 +1,8 @@
+/*
+Name: Richard Chang
+Credit Name: CSE3020 - Computer Science 4
+Assignment name: QueueMastery
+*/
 package Mastery;
 
 import queue.Queue2;
@@ -23,3 +28,14 @@ public class QueueMastery {
 	}
 
 }
+
+/*
+ * Test Case:
+ Adding Coke, Crush, and Pepsi to the soda list
+First soda: Coke
+Amount of cans: 3
+Remove a soda from the list: Coke
+First soda: Crush
+Amount of cans: 2
+
+ */
