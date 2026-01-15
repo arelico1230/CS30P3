@@ -1,9 +1,9 @@
+package linkedlist;
 
-package Skillbuilders;
+
 
 public class LinkedList {
-
-	private Node head;
+private Node head;
 	
 	public LinkedList() {
 		head = null;
@@ -112,4 +112,3 @@ public class LinkedList {
 		head = null;
 	}
 }
-
