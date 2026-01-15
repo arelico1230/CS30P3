@@ -20,7 +20,7 @@ public class Stack2 {
 	public Object pop()
 	{
 		top = top -1;
-		return(data[top]);
+		return(data[top + 1]);
 		
 	}
 	
